@@ -10,7 +10,7 @@ const Products = () => {
   }, [data]);
   return (
     <div>
-      <Heading>Users Dashboard</Heading>
+      <Heading> Products Dashboard</Heading>
       <div>
         {data?.map((d) => (
           <div>{d.name}</div>
