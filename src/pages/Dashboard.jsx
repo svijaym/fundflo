@@ -52,9 +52,22 @@ const Dashboard = () => {
     alert("User added succesfully");
   };
   return (
-    <div>
-      <Heading>Admin Dashboard</Heading>
-      <Box w="300px">
+    <Box
+      w="90%"
+      margin="auto"
+      display="flex"
+      justifyContent="center"
+      flexDirection="column"
+      alignItems="center"
+    >
+      <Heading as='h3' size='lg'>Admin Dashboard</Heading>
+      <Box
+        w="300px"
+        display="flex"
+        justifyContent="center"
+        flexDirection="column"
+        alignItems="center"
+      >
         <form>
           <FormControl isRequired>
             <FormLabel>Name</FormLabel>
@@ -127,7 +140,8 @@ const Dashboard = () => {
           </Button>
         </form>
       </Box>
-      <div>
+      <Heading as='h3' size='lg'>Registered Users</Heading>
+      <Box w="80%">
         {loading && (
           <Stack w="800px">
             <Heading>......Loading</Heading>
@@ -136,15 +150,22 @@ const Dashboard = () => {
         )}
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={10}>
           {data?.map((d) => (
-            <Box w="100px">
+            <Box
+              w="70%"
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              alignItems="center"
+              margin="auto"
+            >
               <Image src={d.profilePic} />
               <Text>Name: {d.name}</Text>
               <Text>Role: {d.role}</Text>
             </Box>
           ))}
         </SimpleGrid>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

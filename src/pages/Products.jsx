@@ -50,7 +50,14 @@ const Products = () => {
     alert("Product added succesfully");
   };
   return (
-    <div>
+    <Box
+      w="90%"
+      margin="auto"
+      display="flex"
+      justifyContent="center"
+      flexDirection="column"
+      alignItems="center"
+    >
       <Heading> Products Dashboard</Heading>
       <div>{loading ? ".....Loading" : null}</div>
       <Box w="300px">
@@ -104,6 +111,7 @@ const Products = () => {
           </Button>
         </form>
       </Box>
+      <br />
       <div>
         {loading && (
           <Stack w="800px">
@@ -113,15 +121,23 @@ const Products = () => {
         )}
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={10}>
           {data?.map((d) => (
-            <Box w="100px">
-              <Image src={d.profilePic} />
+            <Box
+              w="70%"
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              alignItems="center"
+              margin="auto"
+            >
+              <Image src={d.imageurl} />
               <Text>Name: {d.name}</Text>
-              <Text>Role: {d.role}</Text>
+              <Text>quantity: {d.quantity}</Text>
+              <Text>price: {d.price}</Text>
             </Box>
           ))}
         </SimpleGrid>
       </div>
-    </div>
+    </Box>
   );
 };
 
