@@ -23,6 +23,7 @@ const Home = () => {
         Get Started
       </Button>
       <br />
+
       <br />
       <Box display="flex" justifyContent="center" alignContent="center">
         <Image src="https://user-images.githubusercontent.com/101625055/226087422-053cec1c-c8b1-4ea8-88e5-5b471cb91136.svg" />

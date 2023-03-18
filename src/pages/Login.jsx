@@ -28,28 +28,33 @@ export default function Login() {
   };
 
   const handleLogin = (event) => {
-    // Send login request to backend
     event.preventDefault();
     console.log(formData);
-    fetch("https://fdbackend2.onrender.com/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => res.json())
-      .then((res) => setTokens(res));
+    if (formData.email !== "" && formData.password !== "") {
+      fetch("https://fdbackend2.onrender.com/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          setTokens(res.token);
+          console.log(res.token);
+          console.log(tokens);
+        });
 
-    localStorage.setItem("token", tokens);
-    alert("Login succesfull , redirecting to Dashboard");
-    // Redirect to dashboard page
-    naviagate("/dashboard");
+      localStorage.setItem("token", tokens);
+      alert("Login succesfull , redirecting to Dashboard");
+      // Redirect to dashboard page
+      naviagate("/products");
+    } else {
+      alert("Please fill all fields");
+    }
   };
 
-  // function handleDashboard() {
-  //   naviagate("/dashboard");
-  // }
   function handleSignup() {
     naviagate("/signup");
   }

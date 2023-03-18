@@ -35,17 +35,21 @@ export default function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
-    fetch("https://fdbackend2.onrender.com/users/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((resp) => resp.json())
-      .then((res) => console.log(res.data));
-    alert("sign up succesfull, proceede to login");
-    navigate("/login");
+    if (formData.name.length < 4 || formData.password.length < 6) {
+      alert("Name and password shold be greter than 4 charecters");
+    } else {
+      fetch("https://fdbackend2.onrender.com/users/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((resp) => resp.json())
+        .then((res) => console.log(res.data));
+      alert("sign up succesfull, proceede to login");
+      navigate("/login");
+    }
   };
 
   function handleLogin() {

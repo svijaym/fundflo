@@ -13,6 +13,7 @@ const UserProfile = () => {
 
     // Remove JWT token from local storage
     localStorage.removeItem("token");
+    alert("Loggged out succesfully redirecting to home page");
     navigate("/");
   }
   return (
