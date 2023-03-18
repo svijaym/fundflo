@@ -17,18 +17,16 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [show, setShow] = useState("Login");
+
   const navigate = useNavigate();
   function handleHome() {
     navigate("/");
   }
   function handleLogin() {
     navigate("/login");
-    setShow("Logout");
   }
   function handleDashboard() {
     navigate("/dashboard");
@@ -36,17 +34,9 @@ export default function Navbar() {
   function handleProducts() {
     navigate("/products");
   }
-  function handleLogout() {
-    fetch("https://fdbackend2.onrender.com/users/logout", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-
-    // Remove JWT token from local storage
-    localStorage.removeItem("token");
-    setShow("Login");
+  function handleProfile() {
+    console.log("Profile page");
+    navigate("/userprofile");
   }
 
   return (
@@ -90,11 +80,7 @@ export default function Navbar() {
                 <Avatar size={"sm"} src={"https://i.ibb.co/VL94j8H/user.png"} />
               </MenuButton>
               <MenuList>
-                <MenuItem
-                  onClick={show === "Login" ? handleLogin : handleLogout}
-                >
-                  {show}
-                </MenuItem>
+                <MenuItem onClick={handleProfile}>Profile</MenuItem>
                 <MenuItem onClick={handleDashboard}>Dashboard</MenuItem>
                 <MenuDivider />
                 <MenuItem onClick={handleProducts}>Products</MenuItem>

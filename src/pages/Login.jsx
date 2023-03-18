@@ -19,6 +19,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const [tokens, setTokens] = useState("null");
   const handleChange = (event) => {
     setFormData({
       ...formData,
@@ -38,9 +39,9 @@ export default function Login() {
       body: JSON.stringify(formData),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res.token));
+      .then((res) => setTokens(res));
 
-    localStorage.setItem("token", "hi");
+    localStorage.setItem("token", tokens);
     alert("Login succesfull , redirecting to Dashboard");
     // Redirect to dashboard page
     naviagate("/dashboard");
