@@ -5,6 +5,8 @@ const userSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
+      min: 6,
+      max: 999,
     },
     email: {
       type: String,
@@ -33,4 +35,4 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 const user = mongoose.model("user", userSchema);
-module.exports = user
+module.exports = user;

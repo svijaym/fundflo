@@ -15,6 +15,10 @@ const productSchema = new mongoose.Schema(
       min: 1,
       required: true,
     },
+    imageurl: {
+      type: String,
+      requireed: true,
+    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

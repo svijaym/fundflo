@@ -3,11 +3,10 @@ const express = require("express");
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const cors = require("cors");
 const app = express.Router();
-app.use(cors());
+
 const blacklisttoken = [];
-app.get("/",async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const users = await User.find();
     res.json({ message: "Products retrieved", users });
@@ -15,13 +14,40 @@ app.get("/",async (req, res) => {
     res.status(500).json({ message: "Server error", error: err.message });
   }
 });
+app.post("/adduser", async (req, res) => {
+  try {
+    const { name, email, password, role, organization, profilePic } = req.body;
+    if (name && email && password) {
+      const userExists = await User.findOne({ email });
+      if (userExists) {
+        return res.status(400).json({ message: "User already exists" });
+      }
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const new_user = new User({
+      name: name,
+      email: email,
+      role: role,
+      password: hashedPassword,
+      organization: organization,
+      profilePic: profilePic,
+    });
+    await new_user.save();
+    res.json({ message: "user added", new_user });
+  } catch (err) {
+    res.status(500).json({ message: "Server error", error: err.message });
+  }
+});
 app.post("/signup", async (req, res) => {
   try {
     const { name, email, password, role, organization, profilePic } = req.body;
-    const userExists = await User.findOne({ email });
 
-    if (userExists) {
-      return res.status(400).json({ message: "User already exists" });
+    if (name && email && password) {
+      const userExists = await User.findOne({ email });
+      if (userExists) {
+        return res.status(400).json({ message: "User already exists" });
+      }
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -33,7 +59,7 @@ app.post("/signup", async (req, res) => {
       password: hashedPassword,
       profilePic: profilePic,
     });
-
+    await new_user.save();
     res.json({ message: "User created", new_user });
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err.message });
