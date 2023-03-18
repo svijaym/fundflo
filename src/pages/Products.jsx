@@ -8,6 +8,8 @@ import {
   SimpleGrid,
   Skeleton,
   Stack,
+  Text,
+  Image,
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 const Products = () => {
@@ -111,7 +113,11 @@ const Products = () => {
         )}
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={10}>
           {data?.map((d) => (
-            <div>{d.name}</div>
+            <Box w="100px">
+              <Image src={d.profilePic} />
+              <Text>Name: {d.name}</Text>
+              <Text>Role: {d.role}</Text>
+            </Box>
           ))}
         </SimpleGrid>
       </div>

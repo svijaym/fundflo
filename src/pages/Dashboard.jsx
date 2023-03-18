@@ -9,6 +9,8 @@ import {
   SimpleGrid,
   Skeleton,
   Stack,
+  Text,
+  Image,
 } from "@chakra-ui/react";
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -38,7 +40,7 @@ const Dashboard = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
-    fetch("http://localhost:8080/users/adduser", {
+    fetch("https://fdbackend2.onrender.com/users/adduser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -134,7 +136,11 @@ const Dashboard = () => {
         )}
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing={10}>
           {data?.map((d) => (
-            <div>{d.name}</div>
+            <Box w="100px">
+              <Image src={d.profilePic} />
+              <Text>Name: {d.name}</Text>
+              <Text>Role: {d.role}</Text>
+            </Box>
           ))}
         </SimpleGrid>
       </div>
