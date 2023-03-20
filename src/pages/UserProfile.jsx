@@ -19,7 +19,7 @@ const UserProfile = () => {
   }
   return (
     <div>
-      <div>UserProfile</div>
+      <div>UserProfile, get from local storage</div>
       <div>Hello user, userdetails here</div>
       <Button onClick={handleLogout}>Logout</Button>
     </div>
