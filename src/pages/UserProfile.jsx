@@ -20,7 +20,7 @@ const UserProfile = () => {
   return (
     <div>
       <div>UserProfile</div>
-      <div>Hello user</div>
+      <div>Hello user, userdetails here</div>
       <Button onClick={handleLogout}>Logout</Button>
     </div>
   );
