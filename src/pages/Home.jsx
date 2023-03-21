@@ -11,6 +11,7 @@ const Home = () => {
   return (
     <Box p={10}>
       <Heading>Welcome to fundflo Technologies</Heading>
+      <Heading as='h3' size='lg'>Admin Dashboard</Heading>
       <br />
       <Image src="https://user-images.githubusercontent.com/101625055/226087434-a5cda9a3-7614-4d37-a265-bff8e26a63b7.jpg" />
       <Heading as="h4" size="md">
