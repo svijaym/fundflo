@@ -60,7 +60,12 @@ const Dashboard = () => {
       flexDirection="column"
       alignItems="center"
     >
-      <Heading as='h3' size='lg'>Admin Dashboard</Heading>
+      <Heading as="h3" size="lg">
+        Admin Dashboard
+      </Heading>
+      <Heading as="h3" size="lg">
+        Admin Dashboard
+      </Heading>
       <Box
         w="300px"
         display="flex"
@@ -140,7 +145,9 @@ const Dashboard = () => {
           </Button>
         </form>
       </Box>
-      <Heading as='h3' size='lg'>Registered Users</Heading>
+      <Heading as="h3" size="lg">
+        Registered Users
+      </Heading>
       <Box w="80%">
         {loading && (
           <Stack w="800px">
