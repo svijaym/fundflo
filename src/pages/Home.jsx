@@ -15,7 +15,7 @@ const Home = () => {
       <br />
       <Image src="https://user-images.githubusercontent.com/101625055/226087434-a5cda9a3-7614-4d37-a265-bff8e26a63b7.jpg" />
       <Heading as="h4" size="md">
-        Please register or login to explore the application
+        Please register or login to explore the application/website
       </Heading>
       <br />
       <Text fontSize="xl">Don't have account? register yourself</Text>
