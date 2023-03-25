@@ -59,6 +59,7 @@ const Products = () => {
       alignItems="center"
     >
       <Heading> Products Dashboard</Heading>
+      <Heading> Products Dashboard</Heading>
       <div>{loading ? ".....Loading" : null}</div>
       <Box w="300px">
         <form>
