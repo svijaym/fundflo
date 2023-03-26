@@ -65,7 +65,7 @@ const Products = () => {
       <Box w="300px">
         <form>
           <FormControl isRequired>
-            <FormLabel>Name</FormLabel>
+            <FormLabel>Name,Name</FormLabel>
             <Input
               type="text"
               id="name"
