@@ -20,9 +20,9 @@ const UserProfile = () => {
   return (
     <div>
       <div>UserProfile</div>
-      <div>UserProfile</div>
+
       <div>Hello user</div>
-     
+
       <Button onClick={handleLogout}>Logout</Button>
     </div>
   );
