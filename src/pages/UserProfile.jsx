@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const UserProfile = () => {
   const [data, setData] = useState({});
+  console.log(data);
   const navigate = useNavigate();
   function handleLogout() {
     fetch("https://fdbackend2.onrender.com/users/logout", {
