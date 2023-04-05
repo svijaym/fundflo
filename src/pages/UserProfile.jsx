@@ -18,6 +18,7 @@ const UserProfile = () => {
     alert("Loggged out succesfully redirecting to home page");
     navigate("/");
   }
+  console.log(data);
   return (
     <div>
       <div>UserProfile</div>
