@@ -19,7 +19,7 @@ const UserProfile = () => {
     navigate("/");
   }
   console.log(data);
-
+  console.log(data);
   return (
     <div>
       <div>UserProfile</div>
