@@ -18,7 +18,7 @@ const UserProfile = () => {
     alert("Loggged out succesfully redirecting to home page");
     navigate("/");
   }
-  
+  console.log(data);
     console.log(data);
     console.log(data);
   return (
