@@ -26,6 +26,7 @@ const UserProfile = () => {
     console.log(data);
   console.log(data);
       console.log(data);
+      console.log(data);
   console.log(data);
   return (
     <div>
