@@ -21,15 +21,13 @@ const UserProfile = () => {
   }
   console.log(data);
   console.log(data);
+  console.log(data);
   return (
     <div>
       <div>UserProfile</div>
-
       <div>Hello user</div>
-
       <Button onClick={handleLogout}>Logout</Button>
     </div>
   );
 };
-
 export default UserProfile;
