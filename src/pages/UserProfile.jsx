@@ -5,16 +5,6 @@ const UserProfile = () => {
   const [data, setData] = useState({});
   console.log(data);
   console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
-  console.log(data);
   const navigate = useNavigate();
   function handleLogout() {
     fetch("https://fdbackend2.onrender.com/users/logout", {
