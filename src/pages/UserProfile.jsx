@@ -3,12 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const UserProfile = () => {
   const [data, setData] = useState({});
-  console.log(data);
-  console.log(data);
   console.log(data); 
-  console.log(data); 
-  console.log(data);
-  console.log(data);
   console.log(data); 
   const navigate = useNavigate();
   function handleLogout() {
