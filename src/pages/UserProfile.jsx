@@ -5,7 +5,8 @@ const UserProfile = () => {
   const [data, setData] = useState({});
   console.log(data);
   console.log(data);
-  onsole.log(data);
+  console.log(data);
+  console.log(data);
   const navigate = useNavigate();
   function handleLogout() {
     fetch("https://fdbackend2.onrender.com/users/logout", {
@@ -20,8 +21,7 @@ const UserProfile = () => {
     alert("Loggged out succesfully redirecting to home page");
     navigate("/");
   }
- console.log(data);
-  console.log(data);
+
   return (
     <div>
       <div>UserProfile</div>
